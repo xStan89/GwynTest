@@ -202,22 +202,27 @@
     }
 
     #node-info { 
-      margin-top: 8px; 
-      padding: 8px; 
+      /* padding: 0px;  */
+      margin-top: 0px; 
+      margin-bottom: 4px; 
+      padding-left: 6px; 
+      padding-right: 6px; 
       background: var(--highlight-white); 
       border-radius: 6px; 
       flex-shrink: 0;
     }
-    #node-title { font-weight: 700; }
+    #node-title { 
+      font-weight: 700; 
+    }
     .muted { color: var(--shadow-grey); font-weight: 700; }
 
     #node-links {
-      margin-top: 8px;
+      margin-top: 0px;
       flex-shrink: 0;
     }
 
     #connections-box {
-      margin-top: -6px;
+      margin-top: 0px;
       background: var(--highlight-white);
       border-radius: 6px;
       padding: 6px;
@@ -315,31 +320,32 @@
       /* Row 3: Story view content */
       #view-content {
         grid-column: 1 / -1;
-        grid-row: 3;
+        grid-row: 2;
       }
       
       /* Row 4: Node info (title/description) */
       #node-info {
         grid-column: 1 / -1;
-        grid-row: 4;
+        grid-row: 3;
       }
       
       #node-title {
         font-size: 13px;
+        grid-row: 2;
       }
       
       /* Row 5: Node links label */
       #node-links {
         grid-column: 1 / -1;
-        grid-row: 5;
+        grid-row: 4;
       }
       
       /* Row 6: Connections box (flexible/scrollable) */
       #connections-box {
         grid-column: 1 / -1;
-        grid-row: 6;
+        grid-row: 5;
         overflow: auto;
-        min-height: 2;
+        min-height: 2px;
       }
       
       /* Row 7: Message */
@@ -686,7 +692,6 @@
 
       <div id="node-info">
         <div id="node-title">Click/hover on map, search for a person/group or click Start Story</div>
-        <!-- <div id="node-meta" class="muted" style="margin-top:6px;"></div> -->
       </div>
 
       <div id="node-links"></div>

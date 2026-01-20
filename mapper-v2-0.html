@@ -288,7 +288,7 @@
       }
       
       #clear-btn {
-        padding: 4px 6px;
+        padding: 6px 6px;
         font-size: 11px;
       }
       
@@ -397,7 +397,7 @@
       margin-bottom: 8px;
       width: 100%;
       display: none;
-      animation: glow 2s ease-in-out infinite;
+      animation: outlinePulse 2s ease-in-out infinite;
     }
     
     @media (max-width: 768px) {
@@ -449,9 +449,17 @@
       cursor: not-allowed;
     }
 
-    @keyframes glow {
-      0%, 100% { box-shadow: 0 0 5px var(--story-blue); }
-      50% { box-shadow: 0 0 20px var(--story-blue), 0 0 30px var(--story-blue-hover); }
+    @keyframes outlinePulse {
+      0%, 100% { 
+        outline: 0px solid var(--story-blue);
+        outline-offset: 0px;
+        opacity: 1;
+      }
+      50% { 
+        outline: 0px solid var(--story-blue-hover);
+        outline-offset: 0px;
+        opacity: 0.8;
+      }
     }
 
     /* ENTITY MODAL IN STORY MODE */
@@ -560,16 +568,16 @@
       min-height: 0;
     }
 
-    /* Story mode mobile adjustments */
+    /* Story mode MOBILE adjustments */
     @media (max-width: 768px) {
       .view-title {
-        font-size: 18px !important;
+        font-size: 20px !important;
         margin-top: 6px !important;
         margin-bottom: 6px !important;
       }
       
       .view-text {
-        font-size: 13px !important;
+        font-size: 14px !important;
         line-height: 1.4 !important;
         padding-bottom: 6px !important;
       }
@@ -585,7 +593,7 @@
       
       .story-nav-btn {
         padding: 5px 5px !important;
-        font-size: 12px !important;
+        font-size: 11px !important;
       }
     }
   </style>

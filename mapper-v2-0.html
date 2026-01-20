@@ -560,10 +560,34 @@
       min-height: 0;
     }
 
-    /* responsive
-    @media (max-width: 900px) { 
-      #info-panel { width: 260px; min-width: 260px; max-width: 260px; } 
-    } */
+    /* Story mode mobile adjustments */
+    @media (max-width: 768px) {
+      .view-title {
+        font-size: 18px !important;
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+      }
+      
+      .view-text {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        padding-bottom: 6px !important;
+      }
+      
+      .view-image {
+        margin-bottom: 6px !important;
+      }
+      
+      #story-nav-container {
+        margin-bottom: 6px !important;
+        gap: 3px !important;
+      }
+      
+      .story-nav-btn {
+        padding: 5px 5px !important;
+        font-size: 12px !important;
+      }
+    }
   </style>
 </head>
 <body>

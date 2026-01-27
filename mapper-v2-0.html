@@ -8,19 +8,16 @@
     @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
     
     :root {
-      --text-black: #020202;
-      --near-black: #383838;
-      --bg-white: #d3d3d3;
-      --panel-grey: #C2C2C2;
-      --main-yellow: #FFD241;
-      --shadow-grey: #9E9E9E;
-      --light-yellow: #FFEDB4;
-      --shadow-yellow: #DEB555;
+      --white: #FFFFFF;
       --light-grey:  #d8d8d8;
-      --highlight-white: #FFFFFF;
+      --panel-grey: #C2C2C2;
+      --shadow-grey: #9E9E9E;
+      --near-black: #383838;
+      --text-black: #020202;
+      --light-yellow: #FFEDB4;
+      --main-yellow: #FFD241;
+      --shadow-yellow: #DEB555;
       --error-red: #dc2626;
-      --story-blue: #3B82F6;
-      --story-blue-hover: #60A5FA;
       --font-family: 'Rubik', Arial, Helvetica, sans-serif;
     }
     
@@ -29,7 +26,7 @@
       height: 100vh;
       margin:0; 
       font-family: var(--font-family); 
-      background:var(--bg-white); 
+      background:var(--white); 
       align-items: center;
       justify-content: center;
     }
@@ -38,14 +35,14 @@
     #wrap { display:flex; width:100%; height:100%; overflow:hidden; }
 
     /* GRAPH AREA */
-    #graph-area { position:relative; flex:1; background:var(--bg-white); }
-    canvas { width:100%; height:100%; display:block; background:var(--bg-white); }
+    #graph-area { position:relative; flex:1; background:var(--white); }
+    canvas { width:100%; height:100%; display:block; background:var(--white); }
 
     /* LOGO */
     #logo {
       position: absolute;
-      top: 12px;
-      right: 12px;
+      bottom: 6px;
+      right: 22px;
       z-index: 10;
       opacity: 1;
       pointer-events: none;
@@ -72,9 +69,8 @@
     }
     
     .zoom-btn {
-      height: 27px;
-      width: 27px;
-      /* padding: 8px 8px; */
+      height: 28px;
+      width: 28px;
       border-radius: 20px;
       border: none;
       cursor: pointer;
@@ -92,15 +88,14 @@
     }
     
     #fullscreen-btn {
-      height: 27px;
-      width: 27px;
-      /* padding: 8px 8px; */
+      height: 28px;
+      width: 28px;
       border-radius: 20px;
       border: none;
       cursor: pointer;
       background: var(--main-yellow);
       color: var(--text-black);
-      font-size: 16px;
+      font-size: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -117,13 +112,13 @@
       min-width: 200px;  
       max-width: 30vw;
       height: 100vh;
-      background: var(--highlight-white);
+      background: var(--white);
       color: var(--text-black);
       padding: 12px 20px 12px 12px;
       box-sizing: border-box;
       display: flex;
       flex-direction: column;
-      border-left: 1px solid var(--highlight-white);
+      border-left: 1px solid var(--white);
       font-size: 14px;
       /*height: 100vh;*/
       overflow: hidden;
@@ -164,7 +159,7 @@
     }
     #clear-btn { 
       height: 29px;
-      padding: 8px 8px; 
+      padding: 6px 6px; 
       border-radius: 4px; 
       border: none; 
       cursor: pointer; 
@@ -204,12 +199,11 @@
     }
 
     #node-info { 
-      /* padding: 0px;  */
       margin-top: 0px; 
       margin-bottom: 6px; 
       padding-left: 6px; 
       padding-right: 6px; 
-      background: var(--highlight-white); 
+      background: var(--white); 
       border-radius: 6px; 
       flex-shrink: 0;
     }
@@ -226,7 +220,7 @@
 
     #connections-box {
       margin-top: 4px;
-      background: var(--highlight-white);
+      background: var(--white);
       border-radius: 6px;
       padding: 6px;
       overflow: auto;
@@ -359,7 +353,7 @@
       }
       
       #logo {
-        top: 12px;
+        bottom: 12px;
         right: 12px;
       }
       
@@ -399,7 +393,7 @@
     /* STORY MODE BUTTONS */
     #story-btn {
       height: 29px;
-      padding: 8px 8px;
+      padding: 6px 6px;
       border-radius: 4px;
       border: none;
       cursor: pointer;
@@ -466,15 +460,10 @@
 
     .exit-story-nav-btn {
       padding: 6px 8px;
-      /* align-items: bottom;
-      padding-top: 6px;
-      padding-top: 12px;
-      padding-left: 6px;
-      padding-right: 6px; */
       border-radius: 4px;
       border: none;
       cursor: pointer;
-      background: var(--light-grey);
+      background: var(--panel-grey);
       color: black;
       font-family: var(--font-family);
       font-weight: bold;
@@ -484,7 +473,7 @@
     }
 
     .exit-story-nav-btn:hover:not(:disabled) {
-      background: var(--panel-grey);
+      background: var(--light-grey);
     }
 
     .exit-story-nav-btn:disabled {
@@ -660,8 +649,8 @@
         <div id="zoom-controls">
           <button id="zoom-in" class="zoom-btn" title="Zoom In">+</button>
           <button id="zoom-out" class="zoom-btn" title="Zoom Out">–</button>
-          <button id="zoom-reset" class="zoom-btn" title="Fit to Screen">⌞⌝</button>
-          <button id="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+          <button id="zoom-reset" class="zoom-btn" title="Reset Zoom">⛶</button>
+          <button id="fullscreen-btn" title="Toggle Fullscreen">⌞⌝</button>
         </div>
       </div>
 
@@ -735,22 +724,22 @@
     gridSize: 25,
     dragDelayMs: 600,
     force: {
-      linkDistance: 30,
-      linkStrength: 0.8,
-      chargeStrength: -300,
-      collisionPadding: 10,
-      velocityDecay: 0.1
+      linkDistance: 0.1,
+      linkStrength: 0.5,
+      chargeStrength: -100,
+      collisionPadding: 20,
+      velocityDecay: 0.4
     },
     showImages: true,
     maxSuggestions: 25,
     zoomMin: 0.2,
     zoomMax: 5.0,
     zoomStep: 0.2,
-    // DATA FOLDER - Change this path to point to your data folder
+    // DATA FOLDER
     dataFolder: 'https://xstan89.github.io/GwynTest/'
   };
 
-  const PADDING = 40;
+  const PADDING = 50;
 
   // Default Formatting Settings
   let formattingSettings = {
@@ -767,8 +756,8 @@
     backgroundColor: '#E3E3E3',
     nodeSizeMode: 'connections',
     customNodeSize: 30,
-    minNodeSize: 12,
-    maxNodeSize: 80,
+    minNodeSize: 10,
+    maxNodeSize: 100,
     sizeScale: 1.0
   };
 
@@ -937,7 +926,7 @@
     nodes.forEach(n => {
       const format = getNodeFormat(n);
       if (format?.sizeEnabled && format?.nodeSize) {
-        n.r = (format.nodeSize * scale) / 2;
+        n.r = (format.nodeSize * scale);
       } else {
         n.r = (n.baseR || 15) * scale;
       }
@@ -1128,7 +1117,7 @@
         if (row.OutlineHoverThickness) formattingSettings.outlineHoverThickness = parseFloat(row.OutlineHoverThickness);
         if (row.BackgroundColor) {
           formattingSettings.backgroundColor = row.BackgroundColor;
-          document.documentElement.style.setProperty('--bg-white', row.BackgroundColor);
+          document.documentElement.style.setProperty('--white', row.BackgroundColor);
         }
         if (row.SizeMode) formattingSettings.nodeSizeMode = row.SizeMode;
         if (row.CustomNodeSize) formattingSettings.customNodeSize = parseFloat(row.CustomNodeSize);
@@ -1136,27 +1125,44 @@
         const targets = row.Targets ? row.Targets.split('|').map(t => t.trim()).filter(t => t) : [];
         
         const parsedNodeSize = row.NodeSize ? parseFloat(row.NodeSize) : null;
-        const parsedNodeColor = row.NodeColor || null;
-        const parsedOutlineColor = row.OutlineColor || null;
-        const parsedOutlineThickness = row.OutlineThickness ? parseFloat(row.OutlineThickness) : null;
-        const parsedLineColor = row.LineColor || null;
-        const parsedLineThickness = row.LineThickness ? parseFloat(row.LineThickness) : null;
+        
+        // BACKWARD COMPATIBILITY: If enabled columns missing but data exists, default to true
+        const hasNodeEnabled = row.NodeEnabled !== undefined;
+        const hasOutlineEnabled = row.OutlineEnabled !== undefined;
+        const hasSizeEnabled = row.SizeEnabled !== undefined;
+        const hasLineEnabled = row.LineEnabled !== undefined;
+        
+        const nodeEnabled = hasNodeEnabled 
+          ? String(row.NodeEnabled).toLowerCase() === 'true'
+          : (row.NodeColor ? true : false);
+        
+        const outlineEnabled = hasOutlineEnabled
+          ? String(row.OutlineEnabled).toLowerCase() === 'true'
+          : (row.OutlineColor || row.OutlineThickness ? true : false);
+        
+        const sizeEnabled = hasSizeEnabled
+          ? String(row.SizeEnabled).toLowerCase() === 'true'
+          : (parsedNodeSize ? true : false);
+        
+        const lineEnabled = hasLineEnabled
+          ? String(row.LineEnabled).toLowerCase() === 'true'
+          : (row.LineColor || row.LineThickness ? true : false);
         
         conditionalFormats.push({
           type: row.RuleType.toLowerCase(),
           name: row.RuleName || 'Unnamed Rule',
           order: parseInt(row.Order) || conditionalFormats.length,
           targets: targets,
-          nodeEnabled: parsedNodeColor ? true : (String(row.NodeEnabled).toLowerCase() === 'true'),
-          nodeColor: parsedNodeColor,
-          outlineEnabled: (parsedOutlineColor || parsedOutlineThickness) ? true : (String(row.OutlineEnabled).toLowerCase() === 'true'),
-          outlineColor: parsedOutlineColor,
-          outlineThickness: parsedOutlineThickness,
-          sizeEnabled: parsedNodeSize ? true : (String(row.SizeEnabled).toLowerCase() === 'true'),
+          nodeEnabled: nodeEnabled,
+          nodeColor: row.NodeColor || null,
+          outlineEnabled: outlineEnabled,
+          outlineColor: row.OutlineColor || null,
+          outlineThickness: row.OutlineThickness ? parseFloat(row.OutlineThickness) : null,
+          sizeEnabled: sizeEnabled,
           nodeSize: parsedNodeSize,
-          lineEnabled: (parsedLineColor || parsedLineThickness) ? true : (String(row.LineEnabled).toLowerCase() === 'true'),
-          lineColor: parsedLineColor,
-          lineThickness: parsedLineThickness
+          lineEnabled: lineEnabled,
+          lineColor: row.LineColor || null,
+          lineThickness: row.LineThickness ? parseFloat(row.LineThickness) : null
         });
       }
     });
@@ -1334,7 +1340,7 @@
       // Scale node radius - check for conditional format first
       const format = getNodeFormat(n);
       if (format?.sizeEnabled && format?.nodeSize) {
-        n.r = (format.nodeSize * currentScaleFactor) / 2;
+        n.r = (format.nodeSize * currentScaleFactor);
       } else {
         n.r = orig.baseR * currentScaleFactor;
       }
@@ -1845,12 +1851,12 @@
         sourceIcon.href = normalizeUrl(sourceUrl) || '#';
         sourceIcon.target = '_blank';
         sourceIcon.rel = 'noopener';
-        sourceIcon.innerHTML = '🔗';
+        sourceIcon.innerHTML = '➜]';
         sourceIcon.style.fontSize = '16px';
         sourceIcon.style.textDecoration = 'none';
         sourceIcon.style.cursor = 'pointer';
         sourceIcon.style.flexShrink = '0';
-        sourceIcon.title = 'View source';
+        sourceIcon.title = 'Source';
         sourceIcon.addEventListener('click', (e) => {
           e.stopPropagation();
         });
@@ -2000,20 +2006,34 @@
   function drawChevronLabel(x1, y1, x2, y2, text, lineColor) {
     if (!text || text.trim() === '') return;
     
-    // Calculate midpoint
-    const midX = (x1 + x2) / 2;
-    const midY = (y1 + y2) / 2;
-    
-    // Calculate direction vector
+    // Calculate curve control point (same as in drawLink)
     const dx = x2 - x1;
     const dy = y2 - y1;
-    const length = Math.sqrt(dx * dx + dy * dy);
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    
+    if (dist === 0) return;
+    
+    const offset = dist * 0.15;
+    const midX = (x1 + x2) / 2;
+    const midY = (y1 + y2) / 2;
+    const controlX = midX - (dy / dist) * offset;
+    const controlY = midY + (dx / dist) * offset;
+    
+    // Calculate position on curve at t=0.5 (midpoint)
+    const t = 0.5;
+    const curveX = (1-t)*(1-t)*x1 + 2*(1-t)*t*controlX + t*t*x2;
+    const curveY = (1-t)*(1-t)*y1 + 2*(1-t)*t*controlY + t*t*y2;
+    
+    // Calculate tangent at t=0.5 for proper orientation
+    const tangentX = 2*(1-t)*(controlX - x1) + 2*t*(x2 - controlX);
+    const tangentY = 2*(1-t)*(controlY - y1) + 2*t*(y2 - controlY);
+    const length = Math.sqrt(tangentX * tangentX + tangentY * tangentY);
     
     if (length === 0) return;
     
     // Normalize direction
-    const ux = dx / length;
-    const uy = dy / length;
+    const ux = tangentX / length;
+    const uy = tangentY / length;
     
     // Perpendicular vector
     const px = -uy;
@@ -2038,16 +2058,16 @@
     const halfHeight = chevronHeight / 2;
     
     // Left side
-    const leftBaseX = midX - ux * chevronWidth / 2;
-    const leftBaseY = midY - uy * chevronWidth / 2;
+    const leftBaseX = curveX - ux * chevronWidth / 2;
+    const leftBaseY = curveY - uy * chevronWidth / 2;
     const leftTopX = leftBaseX + px * halfHeight;
     const leftTopY = leftBaseY + py * halfHeight;
     const leftBottomX = leftBaseX - px * halfHeight;
     const leftBottomY = leftBaseY - py * halfHeight;
     
     // Right side (with point)
-    const rightBaseX = midX + ux * chevronWidth / 2;
-    const rightBaseY = midY + uy * chevronWidth / 2;
+    const rightBaseX = curveX + ux * chevronWidth / 2;
+    const rightBaseY = curveY + uy * chevronWidth / 2;
     const rightTopX = rightBaseX + px * halfHeight;
     const rightTopY = rightBaseY + py * halfHeight;
     const rightBottomX = rightBaseX - px * halfHeight;
@@ -2068,16 +2088,16 @@
     
     // Draw text with rotation
     ctx.save();
-    // Calculate angle of the line
-    let angle = Math.atan2(dy, dx);
+    // Calculate angle from tangent
+    let angle = Math.atan2(tangentY, tangentX);
     
     // Keep text readable (flip if upside down)
     if (angle > Math.PI / 2 || angle < -Math.PI / 2) {
       angle += Math.PI;
     }
     
-    // Translate to midpoint, rotate, then draw text at origin
-    ctx.translate(midX, midY);
+    // Translate to curve position, rotate, then draw text at origin
+    ctx.translate(curveX, curveY);
     ctx.rotate(angle);
     ctx.fillStyle = '#FFFFFF';
     ctx.fillText(text, 0, 0);
@@ -2099,8 +2119,12 @@
                        ((l.source.id === hoveredConnection.source && l.target.id === hoveredConnection.target) ||
                         (l.source.id === hoveredConnection.target && l.target.id === hoveredConnection.source)));
     
-    // Check if either end is selected
-    const isSelected = selectedNode && (l.source === selectedNode || l.target === selectedNode);
+    // Check if either end is selected OR both ends are connected to the selected node
+    const isSelected = selectedNode && (
+      l.source === selectedNode || 
+      l.target === selectedNode ||
+      (adjacency.get(selectedNode.id)?.has(l.source.id) && adjacency.get(selectedNode.id)?.has(l.target.id))
+    );
     
     // Check if either end is highlighted in current view (Story Mode)
     let isHighlighted = false;
@@ -2120,9 +2144,23 @@
     // Scale line thickness with the current scale factor
     const lineThickness = baseLineThickness * currentScaleFactor;
     
+    // Calculate curve control point for subtle curve
+    const dx = l.target.x - l.source.x;
+    const dy = l.target.y - l.source.y;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+    
+    // Perpendicular offset (15% of distance for subtle curve)
+    const offset = dist * 0.15;
+    const midX = (l.source.x + l.target.x) / 2;
+    const midY = (l.source.y + l.target.y) / 2;
+    
+    // Control point perpendicular to line
+    const controlX = midX - (dy / dist) * offset;
+    const controlY = midY + (dx / dist) * offset;
+    
     ctx.beginPath();
     ctx.moveTo(l.source.x, l.source.y);
-    ctx.lineTo(l.target.x, l.target.y);
+    ctx.quadraticCurveTo(controlX, controlY, l.target.x, l.target.y);
     ctx.lineWidth = lineThickness / zoomLevel;
     ctx.strokeStyle = lineColor;
     ctx.stroke();
@@ -2608,6 +2646,7 @@
       render();
     } else {
       selectedNode = null;
+      hoveredConnection = null;
       if (isStoryMode) {
         hideEntityModal();
       } else {
@@ -2730,10 +2769,10 @@
 
   function updateFullscreenButton() {
     if (document.fullscreenElement) {
-      fullscreenBtn.innerHTML = '⛶'; // Exit fullscreen icon
+      fullscreenBtn.innerHTML = '⌞⌝'; // Exit fullscreen icon
       fullscreenBtn.title = 'Exit Fullscreen';
     } else {
-      fullscreenBtn.innerHTML = '⛶'; // Enter fullscreen icon
+      fullscreenBtn.innerHTML = '⌞⌝'; // Enter fullscreen icon
       fullscreenBtn.title = 'Enter Fullscreen';
     }
     
@@ -2883,12 +2922,12 @@
         sourceIcon.href = normalizeUrl(sourceUrl) || '#';
         sourceIcon.target = '_blank';
         sourceIcon.rel = 'noopener';
-        sourceIcon.innerHTML = '🔗';
+        sourceIcon.innerHTML = '➜]';
         sourceIcon.style.fontSize = '16px';
         sourceIcon.style.textDecoration = 'none';
         sourceIcon.style.cursor = 'pointer';
         sourceIcon.style.flexShrink = '0';
-        sourceIcon.title = 'View source';
+        sourceIcon.title = 'Source';
         sourceIcon.addEventListener('click', (e) => {
           e.stopPropagation();
         });
@@ -2931,6 +2970,7 @@
 
   clearBtn.addEventListener('click', () => { 
     selectedNode = null;
+    hoveredConnection = null;
     
     if (isStoryMode) {
       hideEntityModal();
